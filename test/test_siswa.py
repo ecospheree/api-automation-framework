@@ -1,6 +1,7 @@
 import pytest
 from api.auth import login
 from api.siswa_api import get_all_siswa, create_siswa
+import random
 
 
 EMAIL = "eco@gmail.com"
