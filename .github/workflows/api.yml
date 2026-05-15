@@ -19,18 +19,21 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup Java 17
-        uses: actions/setup-java@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
 
         with:
-          distribution: 'temurin'
-          java-version: '17'
+          python-version: '3.11'
 
-      - name: Build Project
-        run: mvn clean install
+      - name: Install Dependencies
+        run: |
+          pip install pytest
+          pip install pytest-html
+          pip install requests
 
       - name: Run API Automation Test
-        run: mvn test
+        run: |
+          pytest test/ --html=reports/report.html
 
       - name: Upload API Test Report
         uses: actions/upload-artifact@v4
@@ -39,4 +42,4 @@ jobs:
 
         with:
           name: api-automation-report
-          path: target/
+          path: reports/
