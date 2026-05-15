@@ -38,7 +38,7 @@ def test_get_all_siswa():
 def test_create_siswa(token):
     payload = {
         "nama": "Budiono Wongsi",
-        ""nis": str(random.randint(1000000000, 9999999999)),
+        "nis": str(random.randint(1000000000, 9999999999)),
         "kelas": "X-IPA-2",
         "jurusan": "IPA",
         "email": "wongso@mail.com",
