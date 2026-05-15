@@ -1,0 +1,16 @@
+.gradle/
+build/
+out/
+.idea/
+*.iml
+
+reports/
+
+target/
+
+bin/
+
+logs/
+
+allure-results/
+allure-report/
